@@ -25,6 +25,12 @@
 			  			</fieldset>
 					</form>
 					</div>
+
+					<div>
+						<h1 class="text-center">Résultat de la requête</h1>
+						<div id="resultQuery">
+						</div>
+					</div>
 				</div>
 		</div>	
 
@@ -44,10 +50,7 @@
 					fetch(url).then(
 						function(response){
 							response.json().then(function(data){
-								console.log(data)
-								console.log(data.weather[0].main);
-								console.log(data.main.temp / 32);
-								console.log(data.wind.speed); 
+								document.querySelector("#resultQuery").innerHTML = "weather is " + data.weather[0].main + " température °F: " + data.main.temp + " vitesse du vent : " + data.wind.speed
 							})
 	 					}
  					)
