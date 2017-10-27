@@ -13,9 +13,28 @@
 					</div>
 				</div>
 
+				<div class="row-fluid">
+					<div class="span4 offset4">
+					<form>
+			  			<fieldset>
+			    			<label>token</label>
+			    			<input type="text" placeholder="token ?" id="token">
+			    			<button type="button" class="btn btn-primary btn-large btn-block" id="tokenSend">Envoi de la requête</button>
+			  			</fieldset>
+					</form>
+					</div>
+				</div>
 		</div>	
 
 		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				document.querySelector("#tokenSend").addEventListener("click", testToken)
+
+				function testToken() 
+				{
+					console.log("value token: " + document.querySelector("#token").value)
+				}
+			})
 		</script>
 		
 	</body>
